@@ -14,7 +14,7 @@ function MoveUnitFrames:OnEvent(event, arg1)
         PlayerFrame:ClearAllPoints();
         PlayerFrame:SetPoint("CENTER", UIParent, "CENTER", PlayerX, PlayerY);
         PlayerFrame:SetUserPlaced(true);
- 
+
         TargetFrame:ClearAllPoints();
         TargetFrame:SetPoint("CENTER", UIParent, "CENTER", TargetX, TargetY);
         TargetFrame:SetUserPlaced(true);
