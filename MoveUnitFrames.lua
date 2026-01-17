@@ -1,5 +1,5 @@
 local MoveUnitFrames = CreateFrame("FRAME", "MoveUnitFramesFrame");
-MoveUnitFrames:RegisterEvent("VARIABLES_LOADED");
+MoveUnitFrames:RegisterEvent("PLAYER_ENTERING_WORLD");
 MoveUnitFrames:RegisterEvent("PLAYER_LOGOUT");
 
 local PlayerX = -160
@@ -10,7 +10,7 @@ local FocusX = 400
 local FocusY = -200
 
 function MoveUnitFrames:OnEvent(event, arg1)
-    if event == "VARIABLES_LOADED" then
+    if event == "PLAYER_ENTERING_WORLD" then
         PlayerFrame:ClearAllPoints();
         PlayerFrame:SetPoint("CENTER", UIParent, "CENTER", PlayerX, PlayerY);
         PlayerFrame:SetUserPlaced(true);
@@ -22,7 +22,6 @@ function MoveUnitFrames:OnEvent(event, arg1)
         FocusFrame:ClearAllPoints();
         FocusFrame:SetPoint("CENTER", UIParent, "CENTER", FocusX, FocusY);
         FocusFrame:SetUserPlaced(true);
-
     elseif event == "PLAYER_LOGOUT" then
         PlayerFrame:SetUserPlaced(false);
         TargetFrame:SetUserPlaced(false);
